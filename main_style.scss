@@ -1,0 +1,59 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+body {
+  .holy-grid {
+    display: grid;
+    grid-template-columns: 16rem 1fr 16rem;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "nav maincontent aside"
+      "footer footer footer";
+    min-height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+    background-color: red;
+    padding: 3rem;
+  }
+  nav {
+    grid-area: nav;
+    background-color: green;
+    padding: 3rem;
+  }
+  main {
+    grid-area: maincontent;
+    background-color: blue;
+    padding: 3rem;
+  }
+  aside {
+    grid-area: aside;
+    background-color: aquamarine;
+    padding: 3rem;
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: magenta;
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .holy-grid {
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+      auto
+      minmax(5rem, auto)
+      1fr
+      minmax(5rem, auto)
+      auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "maincontent"
+      "aside"
+      "footer";
+  }
+}
