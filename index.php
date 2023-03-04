@@ -12,7 +12,7 @@
 <body>
 
     <div class="holy-grid">
-        THIS IS TEST FROM THE NEW GIT BRANCH
+        THIS BRANCH
         <header>
 
 
