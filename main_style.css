@@ -1,64 +1,81 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
-body .holy-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 16rem 1fr 16rem;
-      grid-template-columns: 16rem 1fr 16rem;
-  -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
-      grid-template-areas: "header header header" "nav maincontent aside" "footer footer footer";
+body .holy-grid-flexcontianer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
+  background-color: white;
 }
 
-body header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
+body .holy-grid-flexcontianer header {
   grid-area: header;
-  background-color: red;
+  background-color: #181823;
   padding: 3rem;
+  color: white;
 }
 
-body nav {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+body .holy-grid-flexcontianer .flex-trinity-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+body .holy-grid-flexcontianer .flex-trinity-container nav {
   grid-area: nav;
-  background-color: green;
+  background-color: #537fe7;
   padding: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 0.5rem;
 }
 
-body main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+body .holy-grid-flexcontianer .flex-trinity-container main {
   grid-area: maincontent;
-  background-color: blue;
+  background-color: #ededed;
   padding: 3rem;
+  -webkit-box-flex: 4.5;
+      -ms-flex: 4.5;
+          flex: 4.5;
+  border-radius: 0.5rem;
 }
 
-body aside {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
+body .holy-grid-flexcontianer .flex-trinity-container aside {
   grid-area: aside;
-  background-color: aquamarine;
+  background-color: #537fe7;
   padding: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 0.5rem;
 }
 
-body footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
+body .holy-grid-flexcontianer footer {
   grid-area: footer;
-  background-color: magenta;
+  background-color: #181823;
+  color: white;
   padding: 3rem;
 }
 
-@media (max-width: 1024px) {
-  .holy-grid {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
-        grid-template-rows: auto minmax(5rem, auto) 1fr minmax(5rem, auto) auto;
-        grid-template-areas: "header" "nav" "maincontent" "aside" "footer";
+@media (max-width: 769px) {
+  .flex-trinity-container {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
   }
 }
 /*# sourceMappingURL=main_style.css.map */
