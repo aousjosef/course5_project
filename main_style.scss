@@ -2,7 +2,7 @@
 
 $background-color: white;
 $dark-color: #181823;
-$sky-blue-color: #537fe7;
+$sky-blue-color: #d9d9d9;
 
 body {
   .holy-grid-flexcontianer {
@@ -10,12 +10,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: $background-color;
+    font-family: "Inter", sans-serif;
 
     header {
-      grid-area: header;
       background-color: $dark-color;
       padding: 3rem;
       color: white;
+      display: flex;
+      justify-content: space-between;
     }
 
     .flex-trinity-container {
@@ -26,21 +28,42 @@ body {
       margin: 1rem;
 
       nav {
-        grid-area: nav;
         background-color: $sky-blue-color;
         padding: 3rem;
         flex: 1;
         border-radius: 0.5rem;
+
+        .unord-list-container {
+          list-style-type: none;
+          border: 3px solid green;
+          text-align: center;
+          padding: 0;
+          li {
+            margin: 2rem 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 1 0rem;
+            border: 3px solid red;
+
+            &:hover {
+              background-color: white;
+            }
+            a {
+              text-decoration: none;
+              color: black;
+              display: inline-block;
+              padding: 0.8rem 2rem;
+            }
+          }
+        }
       }
       main {
-        grid-area: maincontent;
         background-color: #ededed;
         padding: 3rem;
         flex: 4.5;
         border-radius: 0.5rem;
       }
       aside {
-        grid-area: aside;
         background-color: $sky-blue-color;
         padding: 3rem;
         flex: 1;
@@ -49,7 +72,6 @@ body {
     }
 
     footer {
-      grid-area: footer;
       background-color: $dark-color;
       color: white;
       padding: 3rem;

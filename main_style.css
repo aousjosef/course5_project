@@ -9,13 +9,19 @@ body .holy-grid-flexcontianer {
           flex-direction: column;
   min-height: 100vh;
   background-color: white;
+  font-family: "Inter", sans-serif;
 }
 
 body .holy-grid-flexcontianer header {
-  grid-area: header;
   background-color: #181823;
   padding: 3rem;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container {
@@ -34,8 +40,7 @@ body .holy-grid-flexcontianer .flex-trinity-container {
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container nav {
-  grid-area: nav;
-  background-color: #537fe7;
+  background-color: #d9d9d9;
   padding: 3rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -43,8 +48,33 @@ body .holy-grid-flexcontianer .flex-trinity-container nav {
   border-radius: 0.5rem;
 }
 
+body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container {
+  list-style-type: none;
+  border: 3px solid green;
+  text-align: center;
+  padding: 0;
+}
+
+body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container li {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1 0rem;
+  border: 3px solid red;
+}
+
+body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container li:hover {
+  background-color: white;
+}
+
+body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container li a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+}
+
 body .holy-grid-flexcontianer .flex-trinity-container main {
-  grid-area: maincontent;
   background-color: #ededed;
   padding: 3rem;
   -webkit-box-flex: 4.5;
@@ -54,8 +84,7 @@ body .holy-grid-flexcontianer .flex-trinity-container main {
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container aside {
-  grid-area: aside;
-  background-color: #537fe7;
+  background-color: #d9d9d9;
   padding: 3rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -64,7 +93,6 @@ body .holy-grid-flexcontianer .flex-trinity-container aside {
 }
 
 body .holy-grid-flexcontianer footer {
-  grid-area: footer;
   background-color: #181823;
   color: white;
   padding: 3rem;
