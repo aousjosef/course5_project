@@ -2,13 +2,14 @@
 
 $background-color: white;
 $dark-color: #181823;
-$sky-blue-color: #d9d9d9;
-
+$sky-blue-color: #e36414;
+$post-color: #ededed;
+//MAIN CSS FOR ALL PAGES PAGE AND BLOG - START
 body {
   .holy-grid-flexcontianer {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+
     background-color: $background-color;
     font-family: "Inter", sans-serif;
 
@@ -18,32 +19,36 @@ body {
       color: white;
       display: flex;
       justify-content: space-between;
+      a {
+        text-decoration: none;
+        color: white;
+      }
     }
 
     .flex-trinity-container {
       display: flex;
       flex-direction: row;
       flex: 1;
+      margin: 2rem auto;
       gap: 1rem;
-      margin: 1rem;
+      justify-content: center;
 
       nav {
         background-color: $sky-blue-color;
-        padding: 3rem;
         flex: 1;
         border-radius: 0.5rem;
 
         .unord-list-container {
           list-style-type: none;
-          border: 3px solid green;
           text-align: center;
           padding: 0;
+          display: flex;
+          flex-direction: column;
+
           li {
-            margin: 2rem 0;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            margin: 1 0rem;
-            border: 3px solid red;
+            // border: 3px solid red;
 
             &:hover {
               background-color: white;
@@ -52,20 +57,43 @@ body {
               text-decoration: none;
               color: black;
               display: inline-block;
-              padding: 0.8rem 2rem;
+
+              // border: 3px solid green;
+
+              padding: 1rem 6rem;
             }
           }
         }
       }
+
       main {
-        background-color: #ededed;
-        padding: 3rem;
-        flex: 4.5;
+        padding: 2rem;
         border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        overflow: hidden;
+        overflow-y: scroll;
+
+        height: 70vh;
+        // border: 3px solid blue;
+        margin: 0 3rem;
+
+        .post-container {
+          //
+          width: 100%;
+          max-width: 60rem;
+          background-color: $post-color;
+          padding: 1rem;
+          border-radius: 0.5rem;
+
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
       }
       aside {
         background-color: $sky-blue-color;
-        padding: 3rem;
+
         flex: 1;
         border-radius: 0.5rem;
       }
@@ -78,8 +106,28 @@ body {
     }
   }
 }
+//MAIN CSS FOR PAGE AND BLOG - END
 
-@media (max-width: 769px) {
+//Inlogning sida - start
+.login-card-container {
+  // border: 3px solid blue;
+  margin: 0 2rem;
+  text-align: center;
+  align-self: center;
+  padding: 4rem;
+  form {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+//Inlogning sida - end
+
+//Small screen size
+@media (max-width: 1050px) {
   .flex-trinity-container {
     flex-direction: column !important;
   }

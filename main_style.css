@@ -7,7 +7,6 @@ body .holy-grid-flexcontianer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
   background-color: white;
   font-family: "Inter", sans-serif;
 }
@@ -24,6 +23,11 @@ body .holy-grid-flexcontianer header {
           justify-content: space-between;
 }
 
+body .holy-grid-flexcontianer header a {
+  text-decoration: none;
+  color: white;
+}
+
 body .holy-grid-flexcontianer .flex-trinity-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,13 +39,15 @@ body .holy-grid-flexcontianer .flex-trinity-container {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin: 2rem auto;
   gap: 1rem;
-  margin: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container nav {
-  background-color: #d9d9d9;
-  padding: 3rem;
+  background-color: #e36414;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -50,17 +56,20 @@ body .holy-grid-flexcontianer .flex-trinity-container nav {
 
 body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container {
   list-style-type: none;
-  border: 3px solid green;
   text-align: center;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container li {
-  margin: 2rem 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin: 1 0rem;
-  border: 3px solid red;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container li:hover {
@@ -71,21 +80,41 @@ body .holy-grid-flexcontianer .flex-trinity-container nav .unord-list-container 
   text-decoration: none;
   color: black;
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 1rem 6rem;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container main {
-  background-color: #ededed;
-  padding: 3rem;
-  -webkit-box-flex: 4.5;
-      -ms-flex: 4.5;
-          flex: 4.5;
+  padding: 2rem;
   border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 70vh;
+  margin: 0 3rem;
+}
+
+body .holy-grid-flexcontianer .flex-trinity-container main .post-container {
+  width: 100%;
+  max-width: 60rem;
+  background-color: #ededed;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container aside {
-  background-color: #d9d9d9;
-  padding: 3rem;
+  background-color: #e36414;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -98,7 +127,25 @@ body .holy-grid-flexcontianer footer {
   padding: 3rem;
 }
 
-@media (max-width: 769px) {
+.login-card-container {
+  margin: 0 2rem;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 4rem;
+}
+
+.login-card-container form {
+  width: 100%;
+}
+
+.login-card-container input {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1050px) {
   .flex-trinity-container {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;

@@ -1,79 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include "includes/header_leftnav.php" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main_style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <title>Projekt - blogg</title>
-</head>
+<main>
 
-<body>
+    <div class="post-container">
 
-    <div class="holy-grid-flexcontianer">
+        <h1 style="text-align: center"><?php echo "Välkommen till bloggportalen " ?></h1>
 
-        <header>
-            <div class="logo-img-container">
-                Logos
-            </div>
-
-            <a href="" class="login">Log in</a>
-        </header>
-
-
-        <div class="flex-trinity-container">
-
-            <nav>
-
-                <ul class="unord-list-container">
-
-                    <li><a href="">Startsida</a></li>
-                    <li><a href="">Bloggar</a></li>
-                    <li><a href="">Bli medlem</a></li>
-                    <li><a href="">Mina inlägg</a></li>
-                    <li><a href="">Om sidan</a></li>
-
-
-                </ul>
-
-
-
-            </nav>
-
-
-
-
-
-
-            <main>
-
-                main contentttt
-            </main>
-
-
-
-            <aside>
-
-                sub nav -aside
-            </aside>
-
-
-        </div>
-
-
-
-
-
-        <footer>
-            footer
-
-        </footer>
+        <p>tetur praesentium distinct Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Consectetur praesentium distinctio doloribus quia nam ex quis,
+            perspiciatis laudantium dolorum nemo eum deserunt iusto temporibus</p>
 
     </div>
-</body>
 
-</html>
+    <div class="post-container">
+
+        <h1><?php echo "Blog post title" ?></h1>
+        <h6>By <?php echo "Aous Josef " . date("Y/m/d")  ?></h6>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Consectetur praesentium distinctio doloribus quia nam ex quis,
+            perspiciatis laudantium dolorum nemo eum deserunt iusto temporibus voluptates ratione id aliquid quam fuga?</p>
+
+    </div>
+
+    <div class="post-container">
+
+        <h1><?php echo "Blog post title" ?></h1>
+        <h6>By <?php echo "Aous Josef " . date("Y/m/d")  ?></h6>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Consectetur praesentium distinctio doloribus quia nam ex quis,
+            perspiciatis laudantium dolorum nemo eum deserunt iusto temporibus voluptates ratione id aliquid quam fuga?</p>
+
+    </div>
+
+    <div class="post-container">
+
+        <h1><?php echo "Blog post title" ?></h1>
+        <h6>By <?php echo "Aous Josef " . date("Y/m/d")  ?></h6>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Consectetur praesentium distinctio doloribus quia nam ex quis,
+            perspiciatis laudantium dolorum nemo eum deserunt iusto temporibus voluptates ratione id aliquid quam fuga?</p>
+
+    </div>
+
+</main>
+<?php include "includes/footer_rightnav.php" ?>
