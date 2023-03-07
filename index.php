@@ -1,4 +1,6 @@
-<?php include "includes/header_leftnav.php" ?>
+<?php
+$page_title = "Startsida";
+include "includes/header_leftnav.php"; ?>
 
 <main>
 
