@@ -9,6 +9,7 @@ body .holy-grid-flexcontianer {
           flex-direction: column;
   background-color: white;
   font-family: "Inter", sans-serif;
+  height: 100vh;
 }
 
 body .holy-grid-flexcontianer header {
@@ -99,7 +100,7 @@ body .holy-grid-flexcontianer .flex-trinity-container main {
           align-items: center;
   overflow: hidden;
   overflow-y: scroll;
-  height: 70vh;
+  height: 60vh;
   margin: 0 3rem;
 }
 
@@ -130,9 +131,8 @@ body .holy-grid-flexcontianer footer {
 .login-card-container {
   margin: 0 2rem;
   text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   padding: 4rem;
 }
 
@@ -145,6 +145,25 @@ body .holy-grid-flexcontianer footer {
   margin-top: 0.5rem;
 }
 
+.admin-page-container {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.admin-page-container form {
+  padding: 1rem 1.5rem;
+  margin: 4rem 0;
+}
+
+.admin-page-container form textarea {
+  width: 96%;
+}
+
+.admin-page-container form input {
+  width: 96%;
+}
+
 @media (max-width: 1050px) {
   .flex-trinity-container {
     -webkit-box-orient: vertical !important;
@@ -152,5 +171,18 @@ body .holy-grid-flexcontianer footer {
         -ms-flex-direction: column !important;
             flex-direction: column !important;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e36414;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=main_style.css.map */
