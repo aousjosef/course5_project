@@ -13,6 +13,7 @@ body {
     background-color: $background-color;
     font-family: "Inter", sans-serif;
     height: 100vh;
+    // border: 3px solid blue;
 
     header {
       background-color: $dark-color;
@@ -38,7 +39,7 @@ body {
         background-color: $sky-blue-color;
         flex: 1;
         border-radius: 0.5rem;
-
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         .unord-list-container {
           list-style-type: none;
           text-align: center;
@@ -53,15 +54,19 @@ body {
 
             &:hover {
               background-color: white;
+              color: black;
             }
             a {
               text-decoration: none;
-              color: black;
+              color: white;
               display: inline-block;
 
               // border: 3px solid green;
-
               padding: 1rem 6rem;
+
+              &:hover {
+                color: black;
+              }
             }
           }
         }
@@ -91,12 +96,6 @@ body {
           // border: 4px solid red;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
-      }
-      aside {
-        background-color: $sky-blue-color;
-
-        flex: 1;
-        border-radius: 0.5rem;
       }
     }
 
@@ -150,13 +149,6 @@ body {
 
 //
 
-//Small screen size
-@media (max-width: 1050px) {
-  .flex-trinity-container {
-    flex-direction: column !important;
-  }
-}
-
 //Scrollbar design
 ::-webkit-scrollbar {
   width: 10px;
@@ -167,4 +159,26 @@ body {
 ::-webkit-scrollbar-thumb {
   background: $sky-blue-color;
   border-radius: 10px;
+}
+//Small screen size
+
+@media (max-width: 1050px) {
+  .flex-trinity-container {
+    flex-direction: column !important;
+
+    margin: 0 !important;
+
+    nav {
+      border-radius: 0 !important;
+    }
+
+    main {
+      // overflow: visible;
+      // height: auto !important;
+    }
+  }
+
+  .login-card-container {
+    margin: 0 auto;
+  }
 }
