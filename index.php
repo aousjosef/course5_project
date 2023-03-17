@@ -4,9 +4,13 @@ include "includes/header_leftnav.php"; ?>
 
 <main>
 
+    <?php echo "hello"; ?>
+
+
     <div class="post-container">
 
         <h1 style="text-align: center"><?php echo "Välkommen till bloggportalen " ?></h1>
+
 
         <p>tetur praesentium distinct Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Consectetur praesentium distinctio doloribus quia nam ex quis,
