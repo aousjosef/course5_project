@@ -32,24 +32,32 @@ class User
         //Session already started, since class will be runing inside php file with config.php
 
 
-        $sql = "SELECT * FROM users WHERE username ='" . $username . "' AND password='" . $password . "';";
+        $sql = "SELECT * FROM users WHERE username ='" . $username . "';";
 
         $result = $this->db->query($sql);
 
         if ($result->num_rows > 0) {
-            $_SESSION["username"] = $username;
-            $fullname = mysqli_fetch_assoc($result)['fullname'];
-            $_SESSION["fullname"] = $fullname;
+
+
+            $resultArray = mysqli_fetch_assoc($result);
+            $hashedPass = $resultArray['password'];
+            $fullname = $resultArray['fullname'];
+
+            if (password_verify($password, $hashedPass)) {
+
+                $_SESSION["username"] = $username;
+                $_SESSION["fullname"] = $fullname;
+                return true;
+            }
+
 
             // echo "LOGIN SUCESS FROM USER CLASS";
 
-            return true;
-        } else {
-
-            // echo "LOGIN FAIL FROM USER CLASS";
-
-            return false;
         }
+
+        // echo "LOGIN FAIL FROM USER CLASS";
+
+        return false;
     }
 
 
