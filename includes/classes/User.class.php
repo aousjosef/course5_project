@@ -32,7 +32,8 @@ class User
         //Session already started, since class will be runing inside php file with config.php
 
 
-        $sql = "SELECT * FROM users WHERE username ='" . $username . "';";
+
+        $sql = "SELECT * FROM users WHERE username ='" . mysqli_real_escape_string($this->db, $username) . "';";
 
         $result = $this->db->query($sql);
 
@@ -78,7 +79,7 @@ class User
 
             $hashedNewPass = password_hash($newPass, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO users(username, password, fullname) VALUES ('" . $newUser . "','" . $hashedNewPass . "','" . $newFullname . "');";
+            $sql = "INSERT INTO users(username, password, fullname) VALUES ('" . mysqli_real_escape_string($this->db, $newUser) . "','" . $hashedNewPass . "','" . mysqli_real_escape_string($this->db, $newFullname) . "');";
             $result = $this->db->query($sql);
             echo "Ny konto registrerad";
             return true;

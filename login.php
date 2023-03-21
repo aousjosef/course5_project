@@ -22,8 +22,6 @@ if (isset($_SESSION['username'])) {
             $user = $_POST['username'];
             $pass = $_POST['password'];
 
-
-
             $loginAttemp = new User();
 
 
