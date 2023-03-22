@@ -30,15 +30,13 @@ class User
     public function loginUser(String $username, String $password): bool
     {
         //Session already started, since class will be runing inside php file with config.php
-
-
+        // sql_real_escape for sanitiazition of sql input
 
         $sql = "SELECT * FROM users WHERE username ='" . mysqli_real_escape_string($this->db, $username) . "';";
 
         $result = $this->db->query($sql);
 
         if ($result->num_rows > 0) {
-
 
             $resultArray = mysqli_fetch_assoc($result);
             $hashedPass = $resultArray['password'];
@@ -126,26 +124,31 @@ class User
     }
 
 
-    /** 
-     * return new username
-     * @return string;
-     * 
-     */
-
-    public function getNewUser()
+    function __destruct()
     {
-        return $this->newUser;
+        mysqli_close($this->db);
     }
 
+    // /** 
+    //  * return new username
+    //  * @return string;
+    //  * 
+    //  */
 
-    /** 
-     * return new username
-     * @return string;
-     * 
-     */
+    // public function getNewUser()
+    // {
+    //     return $this->newUser;
+    // }
 
-    public function getNewPass()
-    {
-        return $this->newPass;
-    }
+
+    // /** 
+    //  * return new username
+    //  * @return string;
+    //  * 
+    //  */
+
+    // public function getNewPass()
+    // {
+    //     return $this->newPass;
+    // }
 }

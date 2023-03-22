@@ -4,8 +4,6 @@ include "includes/header_leftnav.php"; ?>
 
 <main>
 
-    <?php echo "hello"; ?>
-
 
     <div class="post-container">
 

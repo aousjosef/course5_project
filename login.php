@@ -24,7 +24,6 @@ if (isset($_SESSION['username'])) {
 
             $loginAttemp = new User();
 
-
             if ($loginAttemp->loginUser($user, $pass)) {
 
                 header("Location: admin.php");
@@ -39,7 +38,7 @@ if (isset($_SESSION['username'])) {
         <label for="username">Användare</label>
         <br>
 
-        <input type="username" name="username" id="username" required>
+        <input type="text" name="username" id="username" required>
         <br>
         <br>
 
@@ -49,8 +48,10 @@ if (isset($_SESSION['username'])) {
         <br>
         <br>
 
+
         <input type="submit" value="Logga in">
         <br>
+        <p>Inte medlem? <a href="register.php">registrera nu!</a></p>
         <br>
         <?php
 

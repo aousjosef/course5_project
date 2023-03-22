@@ -15,17 +15,28 @@ if (!isset($_SESSION['username'])) {
 
 <div class="admin-page-container">
 
-    <form class="form-container" action="" method="POST">
-        <h1>Admin sida</h1>
-        <label for="">Titel</label>
-        <br>
-        <input type="text">
-        <br>
-        <br>
-        <label for="">Innehåll</label>
+    <form class="form-container" action="admin.php" method="post">
 
+
+        <?php
+
+        if (isset($_POST['title'])) {
+            $blogpost = new BlogPost();
+            $blogpost->addPost($_SESSION['username'], $_POST['title'], $_POST['content']);
+            header('Location: admin.php');
+            exit();
+        }
+        ?>
+
+        <h1>Admin sida</h1>
+        <label for="title">Titel</label>
         <br>
-        <textarea name="" id="" cols="65" rows="10"></textarea>
+        <input type="text" name="title" id="title" required>
+        <br>
+        <br>
+        <label for="content">Innehåll</label>
+        <br>
+        <textarea name="content" id="content" cols="65" rows="10" required></textarea>
         <br>
         <input type="submit" value="Posta">
 

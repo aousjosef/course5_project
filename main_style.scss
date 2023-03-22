@@ -17,13 +17,20 @@ body {
 
     header {
       background-color: $dark-color;
-      padding: 3rem;
+      padding: 1rem;
       color: white;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       a {
         text-decoration: none;
         color: white;
+      }
+
+      .btn {
+        padding: 1rem;
+        background-color: $sky-blue-color;
+        border-radius: 0.5rem;
       }
     }
 

@@ -25,9 +25,9 @@
             <!-- Logga in/ut knapp som beror på anvädaren är inloggad  -->
             <?php if (isset($_SESSION['username'])) {
 
-                echo "Välkommen " . $_SESSION['fullname'] .  "<a href='logout.php'>Logga ut</a>";
+                echo "Välkommen " . $_SESSION['fullname'] .  "<a href='logout.php' class='btn' >Logga ut</a>";
             } else {
-                echo  "<a href='login.php' class='login'>Log in</a>";
+                echo  "<a href='login.php' class='btn' >Logga in</a>";
             }
 
             ?>
@@ -46,7 +46,11 @@
 
                     <li><a href="index.php">Startsida</a></li>
                     <li><a href="">Bloggar</a></li>
-                    <li><a href="register.php">Bli medlem</a></li>
+
+                    <?php if (!isset($_SESSION['username'])) {
+                        echo '<li><a href="register.php">Bli medlem</a></li>';
+                    } ?>
+
                     <li><a href="admin.php">Admin</a></li>
                     <li><a href="about.php">Om sidan</a></li>
 

@@ -14,7 +14,7 @@ body .holy-grid-flexcontianer {
 
 body .holy-grid-flexcontianer header {
   background-color: #181823;
-  padding: 3rem;
+  padding: 1rem;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,11 +22,20 @@ body .holy-grid-flexcontianer header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .holy-grid-flexcontianer header a {
   text-decoration: none;
   color: white;
+}
+
+body .holy-grid-flexcontianer header .btn {
+  padding: 1rem;
+  background-color: #e36414;
+  border-radius: 0.5rem;
 }
 
 body .holy-grid-flexcontianer .flex-trinity-container {
