@@ -45,7 +45,7 @@
                 <ul class="unord-list-container">
 
                     <li><a href="index.php">Startsida</a></li>
-                    <li><a href="">Bloggar</a></li>
+                    <li><a href="all_posts.php">Bloggar</a></li>
 
                     <?php if (!isset($_SESSION['username'])) {
                         echo '<li><a href="register.php">Bli medlem</a></li>';
@@ -56,7 +56,6 @@
 
 
                 </ul>
-
 
 
             </nav>

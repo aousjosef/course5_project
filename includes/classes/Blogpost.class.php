@@ -43,6 +43,60 @@ class Blogpost
     }
 
 
+    //Update post data
+    public function updatePost(int $id, string $title, string $content): bool
+    {
+        if ($this->setTitle($title) and $this->setContent($content)) {
+            $sanTitle =  mysqli_real_escape_string($this->db, $this->title);
+            $sanContent = mysqli_real_escape_string($this->db, $this->content);
+
+            $sql = "UPDATE posts SET title='" . $sanTitle . "', content='" . $sanContent . "'  WHERE id=" . $id . "";
+            $result = $this->db->query($sql);
+            echo "updated success";
+            return true;
+        }
+
+        return false;
+    }
+
+
+    //Delete post data
+
+    public function deletePost(int $id)
+    {
+        $sql = "DELETE FROM posts WHERE id=$id";
+        $result = $this->db->query($sql);
+    }
+
+
+    //Get all posts from DB, return array
+
+    public function getAllPosts()
+    {
+        $sql = "SELECT * FROM posts ORDER BY created_at DESC;";
+        $result = $this->db->query($sql);
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
+
+
+    public function getPostByUser($username)
+    {
+
+        $sql = "SELECT * FROM posts WHERE author = '" . $username . "' ORDER BY created_at DESC";
+        $result = $this->db->query($sql);
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
+
+    public function getPostById(int $id)
+    {
+        $sql = "SELECT * FROM posts WHERE id = $id;";
+        $result = $this->db->query($sql);
+        return mysqli_fetch_assoc($result);
+    }
+
+
     // set-metoder med skydd mot HTML injektioner
 
     public function setAuthor(string $author)
@@ -70,6 +124,11 @@ class Blogpost
         echo "innehåll kan inte vara tom";
         return false;
     }
+
+
+
+
+
 
 
     // avsluta db ansluitning via destructor

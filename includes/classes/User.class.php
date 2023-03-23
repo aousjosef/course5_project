@@ -8,8 +8,6 @@ class User
     private $newUser;
     private $newPass;
 
-
-
     //for db connection
     function __construct()
     {
@@ -48,13 +46,7 @@ class User
                 $_SESSION["fullname"] = $fullname;
                 return true;
             }
-
-
-            // echo "LOGIN SUCESS FROM USER CLASS";
-
         }
-
-        // echo "LOGIN FAIL FROM USER CLASS";
 
         return false;
     }
@@ -124,31 +116,18 @@ class User
     }
 
 
+
+    //present all users
+    public function getUsers()
+    {
+        $sql = "SELECT * FROM users";
+        $result = $this->db->query($sql);
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+
+
     function __destruct()
     {
         mysqli_close($this->db);
     }
-
-    // /** 
-    //  * return new username
-    //  * @return string;
-    //  * 
-    //  */
-
-    // public function getNewUser()
-    // {
-    //     return $this->newUser;
-    // }
-
-
-    // /** 
-    //  * return new username
-    //  * @return string;
-    //  * 
-    //  */
-
-    // public function getNewPass()
-    // {
-    //     return $this->newPass;
-    // }
 }

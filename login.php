@@ -8,9 +8,6 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 
-
-
-
 <div class="login-card-container">
 
     <form action="login.php" method="post">
@@ -47,7 +44,6 @@ if (isset($_SESSION['username'])) {
         <input type="password" name="password" id="password" required>
         <br>
         <br>
-
 
         <input type="submit" value="Logga in">
         <br>

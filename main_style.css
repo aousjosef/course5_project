@@ -161,7 +161,7 @@ body .holy-grid-flexcontianer footer {
 
 .admin-page-container form {
   padding: 1rem 1.5rem;
-  margin: 1rem 0;
+  margin: 2rem 3rem;
 }
 
 .admin-page-container form textarea {
@@ -170,6 +170,39 @@ body .holy-grid-flexcontianer footer {
 
 .admin-page-container form input {
   width: 96%;
+}
+
+.admin-page-container table {
+  border-collapse: collapse;
+  width: 96%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.admin-page-container table tr:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.admin-page-container table th {
+  background-color: #e36414;
+  color: white;
+}
+
+.admin-page-container table th,
+.admin-page-container table table {
+  padding: 0.8rem 0.6rem;
+}
+
+.admin-page-container table td {
+  padding: 1.1rem 0.8rem;
+}
+
+.admin-page-container table .btn {
+  color: white;
+  background-color: #e36414;
+  border-radius: 0.5rem;
+  padding: 0.8rem 0.5rem;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {

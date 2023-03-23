@@ -1,6 +1,7 @@
 <?php
-$page_title = "Startsida";
+$page_title = "Bloggar";
 include "includes/header_leftnav.php"; ?>
+
 
 <main>
 
@@ -9,7 +10,7 @@ include "includes/header_leftnav.php"; ?>
 
     <div class="post-container">
 
-        <h1 style="text-align: center"><?php echo "Välkommen till bloggportalen " ?></h1>
+        <h1 style="text-align: center"><?php echo "Alla inlägg" ?></h1>
 
 
         <p>tetur praesentium distinct Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -25,7 +26,7 @@ include "includes/header_leftnav.php"; ?>
     // Hämtar endast 5 senaste inlägg från array.
     $arrayOfAllPosts = $allposts->getAllPosts();
 
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i < count($arrayOfAllPosts); $i++) {
 
         echo '<div class="post-container">
     
@@ -47,4 +48,6 @@ include "includes/header_leftnav.php"; ?>
     ?>
 
 </main>
+
+
 <?php include "includes/footer_rightnav.php" ?>

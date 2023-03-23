@@ -142,13 +142,46 @@ body {
   form {
     // border: 3px solid red;
     padding: 1rem 1.5rem;
-    margin: 1rem 0;
+    margin: 2rem 3rem;
     textarea {
       width: 96%;
     }
 
     input {
       width: 96%;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 96%;
+    text-align: center;
+    margin: 0 auto;
+
+    tr:nth-child(odd) {
+      background-color: #ddd;
+    }
+
+    th {
+      background-color: $sky-blue-color;
+      color: white;
+    }
+
+    th,
+    table {
+      // border: 2px solid blue;
+      padding: 0.8rem 0.6rem;
+    }
+
+    td {
+      padding: 1.1rem 0.8rem;
+    }
+    .btn {
+      color: white;
+      background-color: $sky-blue-color;
+      border-radius: 0.5rem;
+      padding: 0.8rem 0.5rem;
+      text-decoration: none;
     }
   }
 }
@@ -177,11 +210,6 @@ body {
 
     nav {
       border-radius: 0 !important;
-    }
-
-    main {
-      // overflow: visible;
-      // height: auto !important;
     }
   }
 
