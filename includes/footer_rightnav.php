@@ -9,12 +9,11 @@
 
         foreach ($userListArray as $user) {
 
-            echo '<li> <a href=""  >' . $user['fullname'] . ' (' . $user['username'] . ') </a>  </li>  ';
+            echo '<li> <a href="all_posts.php?username=' . $user['username'] . '"  >' . $user['fullname'] . ' (' . $user['username'] . ') </a>  </li>  ';
         }
 
         ?>
 
-        <li><a href="">User1</a></li>
 
     </ul>
 
@@ -28,12 +27,25 @@
 
 <footer>
 
-
-    FOOOOTER
-
+    <div class="footer-container">
+        <h4>Aous Josef</h4>
+        <h4>DT093G - Webbutveckling II</h4>
+        <h4>Projektuppgift</h4>
+    </div>
 </footer>
 
 </div>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const topNav = document.querySelector('.top-nav');
+
+    menuBtn.addEventListener('click', function() {
+
+        topNav.classList.toggle('show');
+
+    });
+</script>
 </body>
 
 </html>

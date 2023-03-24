@@ -19,19 +19,20 @@
     <div class="holy-grid-flexcontianer">
 
         <header>
-            <div class="logo-img-container">
-                Logos
+            <div>
+                <a href="index.php">BloggPortalen</a>
             </div>
             <!-- Logga in/ut knapp som beror på anvädaren är inloggad  -->
             <?php if (isset($_SESSION['username'])) {
 
-                echo "Välkommen " . $_SESSION['fullname'] .  "<a href='logout.php' class='btn' >Logga ut</a>";
+                echo "<span> Välkommen " . $_SESSION['fullname'] .  "</span><a href='logout.php' class='log btn' >Logga ut</a>";
             } else {
-                echo  "<a href='login.php' class='btn' >Logga in</a>";
+                echo  "<a href='login.php' class='log btn' >Logga in</a>";
             }
 
             ?>
 
+            <a id="menu-btn" class="menu btn">Menu</a>
 
         </header>
 
@@ -40,12 +41,18 @@
 
 
             <!-- NAVBAR TO DIFFERENT PAGES - START -->
-            <nav>
+            <nav class="top-nav">
 
                 <ul class="unord-list-container">
 
                     <li><a href="index.php">Startsida</a></li>
                     <li><a href="all_posts.php">Bloggar</a></li>
+                    <?php if (!isset($_SESSION['username'])) {
+                        echo '<li><a href="login.php">Logga in</a></li>';
+                    } else {
+                        echo '<li><a href="logout.php">Logga ut</a></li>';
+                    } ?>
+
 
                     <?php if (!isset($_SESSION['username'])) {
                         echo '<li><a href="register.php">Bli medlem</a></li>';

@@ -55,8 +55,6 @@ if (!isset($_SESSION['username'])) {
 
     <table>
 
-
-
         <tr>
             <th>Titel</th>
             <th>Innehåll</th>

@@ -5,30 +5,26 @@ include "includes/header_leftnav.php"; ?>
 
 <main>
 
-
-
-
-    <div class="post-container">
-
-        <h1 style="text-align: center"><?php echo "Alla inlägg" ?></h1>
-
-
-        <p>tetur praesentium distinct Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Consectetur praesentium distinctio doloribus quia nam ex quis,
-            perspiciatis laudantium dolorum nemo eum deserunt iusto temporibus</p>
-
-    </div>
-
     <?php
 
-    $allposts = new Blogpost();
+    if (!isset($_GET['username'])) {
 
-    // Hämtar endast 5 senaste inlägg från array.
-    $arrayOfAllPosts = $allposts->getAllPosts();
+        echo '
+        <div class="post-container">
+        
+        <h1 style="text-align: center">Alla inlägg</h1>
 
-    for ($i = 0; $i < count($arrayOfAllPosts); $i++) {
+        <p style= "visibility: hidden">scelerisque molestie est, nec mattis erat varius fermentum. Ut vel lacus placerat purus tempor elementum</p>
+        
+        </div>
+        ';
 
-        echo '<div class="post-container">
+        $allposts = new Blogpost();
+        $arrayOfAllPosts = $allposts->getAllPosts();
+
+        for ($i = 0; $i < count($arrayOfAllPosts); $i++) {
+
+            echo '<div class="post-container">
     
     <h1> ' . $arrayOfAllPosts[$i]['title'] . '</h1>
     
@@ -37,11 +33,36 @@ include "includes/header_leftnav.php"; ?>
     <p>' . $arrayOfAllPosts[$i]['content'] . '</p> 
     
     </div>';
+        }
+    } else {
+        echo '
+        <div class="post-container">
+        
+        <h1 style="text-align: center">Inlägg av ' . $_GET['username'] . ' </h1>
+        <p style= "visibility: hidden">scelerisque molestie est, nec mattis erat varius fermentum. Ut vel lacus placerat purus tempor elementum</p>
 
-        // echo "<pre>";
-        // print_r($post['id']);
-        // echo "</pre>";
+        </div>
+        ';
+
+        $postsByUser = new BlogPost();
+
+        $postsByUserArray = $postsByUser->getPostByUser($_GET['username']);
+
+        foreach ($postsByUserArray as $post) {
+
+            echo '<div class="post-container">
+    
+            <h1> ' . $post['title'] . '</h1>
+            
+            <h6>By ' . $post['author'] . ' ' . $post['created_at'] . '</h6>
+            
+            <p>' . $post['content'] . '</p> 
+            
+            </div>';
+        }
     }
+
+
 
 
 
