@@ -14,6 +14,12 @@ body {
     font-family: "Inter", sans-serif;
     height: 100vh;
     // border: 3px solid blue;
+    h6 {
+      font-size: 0.67rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
 
     header {
       background-color: $dark-color;
@@ -84,9 +90,6 @@ body {
             }
           }
         }
-      }
-      .top-nav {
-        // display: none;
       }
 
       main {

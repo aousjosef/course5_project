@@ -156,12 +156,6 @@ class Blogpost
         return false;
     }
 
-
-
-
-
-
-
     // avsluta db ansluitning via destructor
     function __destruct()
     {

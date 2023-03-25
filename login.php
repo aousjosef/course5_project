@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])) {
         <br>
         <br>
 
-        <label for="passwrod">Lösenord</label>
+        <label for="password">Lösenord</label>
         <br>
         <input type="password" name="password" id="password" required>
         <br>

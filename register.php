@@ -34,13 +34,13 @@ if (isset($_SESSION['username'])) {
         <br>
         <br>
 
-        <label for="passwrod">Lösenord</label>
+        <label for="password">Lösenord</label>
         <br>
         <input type="password" name="password" id="password" required>
         <br>
         <br>
 
-        <label for="passwrod">Fullständig namn</label>
+        <label for="password">Fullständig namn</label>
         <br>
         <input type="fullname" name="fullname" id="fullname" required>
         <br>

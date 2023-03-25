@@ -12,6 +12,14 @@ body .holy-grid-flexcontianer {
   height: 100vh;
 }
 
+body .holy-grid-flexcontianer h6 {
+  font-size: 0.67rem;
+}
+
+body .holy-grid-flexcontianer p {
+  font-size: 1.3rem;
+}
+
 body .holy-grid-flexcontianer header {
   background-color: #181823;
   padding: 1rem;
