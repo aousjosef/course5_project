@@ -20,9 +20,9 @@ class User
 
     /**
      * Check login 
-     * @param  string $username; 
-     * @param string $password;
-     * @return bool;
+     * @param  string $username
+     * @param string $password
+     * @return bool
      */
 
     public function loginUser(String $username, String $password): bool
@@ -116,7 +116,10 @@ class User
     }
 
 
-
+    /**
+     * Get array of users
+     * @return array
+     */
     //present all users
     public function getUsers()
     {

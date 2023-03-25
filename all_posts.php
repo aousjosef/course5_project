@@ -7,6 +7,8 @@ include "includes/header_leftnav.php"; ?>
 
     <?php
 
+    //If statment som visar PHP koden nedan OM man kommer till sidan via sidebar med användare namn
+    $posts = new Blogpost();
     if (!isset($_GET['username'])) {
 
         echo '
@@ -19,8 +21,8 @@ include "includes/header_leftnav.php"; ?>
         </div>
         ';
 
-        $allposts = new Blogpost();
-        $arrayOfAllPosts = $allposts->getAllPosts();
+
+        $arrayOfAllPosts = $posts->getAllPosts();
 
         for ($i = 0; $i < count($arrayOfAllPosts); $i++) {
 
@@ -35,6 +37,7 @@ include "includes/header_leftnav.php"; ?>
     </div>';
         }
     } else {
+        //If statment som visar PHP koden nedan OM man kommer till sidan via Bloggar från meny
         echo '
         <div class="post-container">
         
@@ -44,9 +47,7 @@ include "includes/header_leftnav.php"; ?>
         </div>
         ';
 
-        $postsByUser = new BlogPost();
-
-        $postsByUserArray = $postsByUser->getPostByUser($_GET['username']);
+        $postsByUserArray = $posts->getPostByUser($_GET['username']);
 
         foreach ($postsByUserArray as $post) {
 
@@ -61,10 +62,6 @@ include "includes/header_leftnav.php"; ?>
             </div>';
         }
     }
-
-
-
-
 
     ?>
 

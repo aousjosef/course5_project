@@ -1,4 +1,5 @@
-<?php include "includes/config.php" ?>
+<?php include  'includes/config.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +60,7 @@
                     } ?>
 
                     <li><a href="admin.php">Admin</a></li>
-                    <li><a href="about.php">Om sidan</a></li>
+
 
 
                 </ul>

@@ -7,7 +7,8 @@ $siteTitle = " | Bloggportalen ";
 
 //Auto-inklud klasser
 spl_autoload_register(function ($class_name) {
-    include 'classes/' . $class_name . '.class.php'; //sökväg till mappen för dina klasser
+    include 'includes/classes/' . $class_name . '.class.php'; //sökväg till mappen för dina klasser
+
 });
 
 session_start();
@@ -26,6 +27,12 @@ if ($devmode) {
     define("DBPASS", "password");
     define("DBDATABASE", "bloggdb");
 } else {
+
+
+    define("DBHOST", "studentmysql.miun.se");
+    define("DBUSER", "aojo2100");
+    define("DBPASS", "wRavhjHEze");
+    define("DBDATABASE", "aojo2100");
 
     //Riktiga databasen
 }

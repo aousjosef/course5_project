@@ -17,19 +17,20 @@ if (!isset($_SESSION['username'])) {
 
     <form class="form-container" action="admin.php" method="post">
 
-
         <?php
 
+        $blogpost = new Blogpost();
+
+        // Lägga till nya inlägg - efter kontroll
         if (isset($_POST['title'])) {
-            $blogpost = new BlogPost();
             $blogpost->addPost($_SESSION['username'], $_POST['title'], $_POST['content']);
             unset($_POST);
             header('Location: admin.php');
         }
 
+        //radera inlägg - efter kontroll
         if (isset($_GET['deleteid'])) {
             $deleteid = $_GET['deleteid'];
-            $blogpost = new BlogPost();
             $blogpost->deletePost($deleteid);
             echo "Inlägg raderad";
         }
@@ -66,18 +67,9 @@ if (!isset($_SESSION['username'])) {
         </tr>
 
         <?php
-        //POSTS BY USER
 
-        $blogPostsByUser = new BlogPost();
-
-
-
-        $arrayOfPostsByUser = $blogPostsByUser->getPostByUser($_SESSION['username']);
-
-
-
-
-
+        //Visning av inlägg i tabell
+        $arrayOfPostsByUser = $blogpost->getPostByUser($_SESSION['username']);
         foreach ($arrayOfPostsByUser as $post) {
             echo '<tr>';
 
@@ -97,19 +89,9 @@ if (!isset($_SESSION['username'])) {
         ?>
 
 
-
-
-
     </table>
 
 </div>
 
-<?php
-
-$test = new Blogpost();
-
-$test->deletePost(4);
-
-?>
 
 <?php include "includes/footer_rightnav.php" ?>

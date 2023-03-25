@@ -4,27 +4,31 @@
 $page_title = "Redigera inlägg";
 include "includes/header_leftnav.php";
 
+//Kontroll att användaren är inloggad
 if (!isset($_SESSION['username'])) {
     header("Location: login.php?error=1");
 }
 
+$post = new Blogpost();
+
+
+//Kontroll ifall sidan innehåller postid 
 if (!isset($_GET['postid'])) {
     header("Location: admin.php");
+} else {
+    $postId = (int) $_GET['postid'];
+
+    $postArray = $post->getPostById($postId);
 }
+
 ?>
 
 <?php
 
-if (isset($_GET['postid'])) {
-    $postId = (int) $_GET['postid'];
-    $selectedPost = new BlogPost();
-    $postArray = $selectedPost->getPostById($postId);
-}
-
 
 if (isset($_POST['title'])) {
-    $blogpost = new BlogPost();
-    $blogpost->updatePost($_GET['postid'], $_POST['title'], $_POST['content']);
+
+    $post->updatePost($_GET['postid'], $_POST['title'], $_POST['content']);
     unset($_POST);
     header('Location: admin.php');
 }
@@ -33,7 +37,6 @@ if (isset($_POST['title'])) {
 
 
 <div class="admin-page-container">
-
 
 
     <form class="form-container" <?php echo 'action= "edit_post.php?postid=' . $postId . '"' ?> method="post">

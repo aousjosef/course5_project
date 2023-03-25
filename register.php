@@ -9,20 +9,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 
-
-
-
-
-
-
 <div class="login-card-container">
-
-
-
-
-
-
-
 
     <form action="register.php" method="post">
 

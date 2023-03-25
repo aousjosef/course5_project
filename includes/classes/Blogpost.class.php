@@ -18,7 +18,11 @@ class Blogpost
     }
 
     /** 
-     * add post funktion
+     * Add post
+     * @param string author;
+     * @param string title
+     * @param string content
+     * @return boolean
      */
     public function addPost(string $author, string $title, string $content): bool
     {
@@ -43,7 +47,14 @@ class Blogpost
     }
 
 
-    //Update post data
+
+    /**
+     * Update post data
+     * @param int id 
+     * @param string title
+     * @param string content
+     * @return bool
+     */
     public function updatePost(int $id, string $title, string $content): bool
     {
         if ($this->setTitle($title) and $this->setContent($content)) {
@@ -60,7 +71,12 @@ class Blogpost
     }
 
 
-    //Delete post data
+
+    /**
+     * Delete post data
+     * @param int id
+     * 
+     */
 
     public function deletePost(int $id)
     {
@@ -69,7 +85,11 @@ class Blogpost
     }
 
 
-    //Get all posts from DB, return array
+
+    /**
+     * Get all posts from DB
+     * @return array
+     */
 
     public function getAllPosts()
     {
@@ -79,6 +99,11 @@ class Blogpost
     }
 
 
+    /**
+     * Get all posts from one user
+     * @param string username
+     * @return array
+     */
 
     public function getPostByUser($username)
     {
@@ -88,6 +113,12 @@ class Blogpost
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
+
+    /**
+     * Get one specific post
+     * @param int id
+     * @return array
+     */
 
     public function getPostById(int $id)
     {

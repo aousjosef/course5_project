@@ -11,23 +11,29 @@ include "includes/header_leftnav.php"; ?>
 
         <h1 style="text-align: center"><?php echo "Välkommen till bloggportalen " ?></h1>
 
+        <p>Denna bloggsida skapades för webbutvecklingskursen DT093G av Aous Josef. Webbsidan skapades med hjälp av HTML,
+            CSS, JavaScript, PHP och MySQL. Nedan följer lista över senaste blogginlägg.</p>
 
-        <p>tetur praesentium distinct Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Consectetur praesentium distinctio doloribus quia nam ex quis,
-            perspiciatis laudantium dolorum nemo eum deserunt iusto temporibus</p>
 
     </div>
 
+
+    <!-- Funktioner för att kontrollera antal inlägg som finns -->
     <?php
 
-    $allposts = new Blogpost();
+    $post = new Blogpost();
 
     // Hämtar endast 5 senaste inlägg från array.
-    $arrayOfAllPosts = $allposts->getAllPosts();
+    $arrayOfAllPosts = $post->getAllPosts();
 
-    for ($i = 0; $i < 5; $i++) {
 
-        echo '<div class="post-container">
+    if (empty($arrayOfAllPosts)) {
+        echo "Inga inlägg publicerade än";
+    } elseif (count($arrayOfAllPosts) < 5) {
+
+        for ($i = 0; $i < count($arrayOfAllPosts); $i++) {
+
+            echo '<div class="post-container">
     
     <h1> ' . $arrayOfAllPosts[$i]['title'] . '</h1>
     
@@ -36,13 +42,22 @@ include "includes/header_leftnav.php"; ?>
     <p>' . $arrayOfAllPosts[$i]['content'] . '</p> 
     
     </div>';
+        }
+    } else {
 
-        // echo "<pre>";
-        // print_r($post['id']);
-        // echo "</pre>";
+        for ($i = 0; $i < 5; $i++) {
+
+            echo '<div class="post-container">
+    
+    <h1> ' . $arrayOfAllPosts[$i]['title'] . '</h1>
+    
+    <h6>By ' . $arrayOfAllPosts[$i]['author'] . ' ' . $arrayOfAllPosts[$i]['created_at'] . '</h6>
+    
+    <p>' . $arrayOfAllPosts[$i]['content'] . '</p> 
+    
+    </div>';
+        }
     }
-
-
 
     ?>
 

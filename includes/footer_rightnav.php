@@ -1,7 +1,7 @@
 <nav>
     <ul class="unord-list-container">
 
-
+        <!-- funktion för att presentera användare från DB -->
         <?php
         $userList = new User();
 
@@ -36,7 +36,9 @@
 
 </div>
 
+
 <script>
+    // js för att visa/dölja meny för mobile view
     const menuBtn = document.getElementById('menu-btn');
     const topNav = document.querySelector('.top-nav');
 
