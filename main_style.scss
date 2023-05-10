@@ -101,14 +101,10 @@ body {
         align-items: center;
         overflow: hidden;
         overflow-y: scroll;
-
         height: 60vh;
-        // border: 3px solid blue;
         margin: 0 3rem;
-
+        // border: 3px solid blue;
         .post-container {
-          //
-
           max-width: 50rem;
           width: 96%;
           background-color: $post-color;

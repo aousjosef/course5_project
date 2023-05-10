@@ -7,4 +7,4 @@ Webbsidan skapades med HTML, SCSS, JavaScript, PHP samt mySQL.
 
 **För att klona följande reposoitry skriv följande kommando i terminal**
 
-    git clone https://github.com/aousjosef/webbutv2_m5_projekt.git
+    git clone https://github.com/Webbutvecklings-programmet/projekt_vt23-aousjosef.git

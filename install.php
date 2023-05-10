@@ -22,7 +22,6 @@ $sql .= "CREATE TABLE users (
 
 $sql .= "DROP TABLE IF EXISTS posts;"; //Tabort tabell om den exister
 
-
 $sql .= "CREATE TABLE posts (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     author VARCHAR(50) NOT NULL,

@@ -4,16 +4,12 @@ include "includes/header_leftnav.php"; ?>
 
 <main>
 
-
-
-
     <div class="post-container">
 
         <h1 style="text-align: center"><?php echo "Välkommen till bloggportalen " ?></h1>
 
         <p>Denna bloggsida skapades för webbutvecklingskursen DT093G av Aous Josef. Webbsidan skapades med hjälp av HTML,
             CSS, JavaScript, PHP och MySQL. Nedan följer lista över senaste blogginlägg.</p>
-
 
     </div>
 

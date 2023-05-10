@@ -28,7 +28,6 @@ if (isset($_SESSION['username'])) {
                 echo "Fel användarnamn eller lösenord";
             }
         }
-
         ?>
 
         <h1>Inloggning</h1>

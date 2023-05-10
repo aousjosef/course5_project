@@ -10,9 +10,6 @@ if (!isset($_SESSION['username'])) {
 
 ?>
 
-
-
-
 <div class="admin-page-container">
 
     <form class="form-container" action="admin.php" method="post">
